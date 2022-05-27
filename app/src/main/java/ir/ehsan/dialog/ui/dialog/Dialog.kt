@@ -39,6 +39,7 @@ fun Dialog(
     animation: DialogAnimation = DialogAnimation.Shrink,
     progressColor: Color = Color(0xFF96FFE7),
     progressBackgroundColor: Color = Color(0xFF27C5A1),
+    showProgress:Boolean = true,
     onEnd: () -> Unit = {},
     content: @Composable (()->Unit)
 ) {
@@ -97,14 +98,16 @@ fun Dialog(
                     verticalArrangement = Arrangement.spacedBy(16.dp)
                 ) {
                     content()
-                    LinearProgressIndicator(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .clip(CircleShape),
-                        progress = progressAnimate,
-                        color = progressColor,
-                        backgroundColor = progressBackgroundColor
-                    )
+                    if (showProgress){
+                        LinearProgressIndicator(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .clip(CircleShape),
+                            progress = progressAnimate,
+                            color = progressColor,
+                            backgroundColor = progressBackgroundColor
+                        )
+                    }
                 }
             }
         }

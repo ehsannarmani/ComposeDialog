@@ -43,9 +43,39 @@ class MainActivity : ComponentActivity() {
                     Dialog(
                         visible = dialogVisible,
                         duration = 5000,
-                        position= Alignment.BottomCenter,
+                        position= Alignment.TopCenter,
                         animation = DialogAnimation.Shrink,
                         onEnd = { dialogVisible = false },
+                    ) {
+                        Text(
+                            text = "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد کتابهای زیادی در شصت و سه درصد گذشته حال و آینده",
+                            color = Color.White,
+                            fontSize = 13.sp,
+                            textAlign = TextAlign.End
+                        )
+                    }
+                    var dialogVisible2 by State(value = false)
+                    Dialog(
+                        visible = dialogVisible2,
+                        duration = 5000,
+                        position= Alignment.TopCenter,
+                        animation = DialogAnimation.Zoom,
+                        onEnd = { dialogVisible2 = false },
+                    ) {
+                        Text(
+                            text = "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد کتابهای زیادی در شصت و سه درصد گذشته حال و آینده",
+                            color = Color.White,
+                            fontSize = 13.sp,
+                            textAlign = TextAlign.End
+                        )
+                    }
+                    var dialogVisible3 by State(value = false)
+                    Dialog(
+                        visible = dialogVisible3,
+                        duration = 5000,
+                        position= Alignment.BottomCenter,
+                        animation = DialogAnimation.Slide,
+                        onEnd = { dialogVisible3 = false },
                     ) {
                         Text(
                             text = "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد کتابهای زیادی در شصت و سه درصد گذشته حال و آینده",
@@ -61,6 +91,14 @@ class MainActivity : ComponentActivity() {
                         horizontalAlignment = Alignment.CenterHorizontally
                     ) {
                         Button(onClick = { dialogVisible = true }) {
+                            Text(text = "فشارم بده", fontFamily = yekan, fontSize = 13.sp)
+                        }
+                        Spacer(Modifier.height(8.dp))
+                        Button(onClick = { dialogVisible2 = true }) {
+                            Text(text = "فشارم بده", fontFamily = yekan, fontSize = 13.sp)
+                        }
+                        Spacer(Modifier.height(8.dp))
+                        Button(onClick = { dialogVisible3 = true }) {
                             Text(text = "فشارم بده", fontFamily = yekan, fontSize = 13.sp)
                         }
                     }
