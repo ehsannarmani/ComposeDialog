@@ -1,4 +1,4 @@
-package ir.ehsan.dialog.ui.dialog
+package com.github.ehsannarmani.compose.dialog.ui
 
 import androidx.compose.animation.*
 import androidx.compose.animation.core.LinearEasing
@@ -22,7 +22,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.zIndex
-import ir.ehsan.dialog.extensions.State
 import kotlinx.coroutines.delay
 
 
@@ -63,7 +62,9 @@ fun Dialog(
         }
     }
 
-    Box(modifier = Modifier.fillMaxSize().zIndex(2f), contentAlignment = position) {
+    Box(modifier = Modifier
+        .fillMaxSize()
+        .zIndex(2f), contentAlignment = position) {
         var contentModifier = Modifier
             .fillMaxWidth()
             .padding(8.dp)
@@ -90,7 +91,8 @@ fun Dialog(
                 exit =  dialogExitAnim,
             ) {
                 Column(
-                    modifier.fillMaxWidth()
+                    modifier
+                        .fillMaxWidth()
                         .clip(MaterialTheme.shapes.small)
                         .background(Color(0xFF14AA88))
                         .padding(10.dp),
@@ -111,4 +113,9 @@ fun Dialog(
             }
         }
     }
+}
+
+@Composable
+private fun <T>State(value:T) = remember {
+    mutableStateOf(value)
 }

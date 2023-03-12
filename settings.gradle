@@ -10,7 +10,11 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven{
+            url 'https://jitpack.io'
+        }
     }
 }
 rootProject.name = "Dialog"
 include ':app'
+include ':compose_dialog'
